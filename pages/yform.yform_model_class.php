@@ -77,12 +77,29 @@ class %s extends \rex_yform_manager_dataset {
                 
 		    }
 
-
-
 		    $fullCode = sprintf($classTemplate, $className, $generatedClasses);
+		    ?>
 
-		    echo '<h2>'.$table.'</h2><pre class="pre-scrollable">'.$fullCode.'</pre>';
+		<section class="rex-page-section">
 
+
+			<div class="panel panel-default">
+
+				<header class="panel-heading">
+					<div class="panel-title"><?= $table ?></div>
+				</header>
+
+				<div class="panel-body">
+					<pre class="pre-scrollable">
+						<?= $fullCode ?>
+					</pre>
+				</div>
+			</div>
+
+
+		</section>
+
+		<?php
 		}
 
 		?>
