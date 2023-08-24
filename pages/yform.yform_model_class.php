@@ -13,14 +13,20 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 		}
 
 		$classTemplate = '
-class %s extends \rex_yform_manager_dataset {
-	%s
+# 1. In die boot.php muss folgender auskommentierte Code:
+/* 
+rex_yform_manager_dataset::setModelClass(
+    \'rex_%1$s\',
+    %1$s::class,
+);
+*/
+
+# 2. Erstelle eine Datei lib/%1$s.php in deinem project- oder eigenen Addon mit folgendem Inhalt:
+
+class %1$s extends \rex_yform_manager_dataset {
+	%2$s
 }';
-		$methodTemplate = '
-	public function get%s() : ?%s {
-		return $this->getValue("%s");
-	}
-';
+
 
 		foreach ($t as $table) {
 
