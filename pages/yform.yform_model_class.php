@@ -6,7 +6,11 @@
 echo \rex_view::title(\rex_i18n::msg('yform'));
 
 
-		$tables = ['rex_staff', 'rex_staff_category'];
+		$tables = rex_sql::factory()->getArray("SELECT table_name FROM rex_yform_table ORDER BY table_name");
+		$t = [];
+		foreach ($tables as $table) {
+		    $t[] = $table['table_name'];
+		}
 
 		$classTemplate = '
 class %s extends \rex_yform_manager_dataset {
@@ -18,7 +22,7 @@ class %s extends \rex_yform_manager_dataset {
 	}
 ';
 
-		foreach ($tables as $table) {
+		foreach ($t as $table) {
 
 		    $results = rex_sql::factory()->getArray("SELECT `id`, `table_name`, `prio`, `type_name`, `type_id`, `db_type`, `name`, `label` FROM `rex_yform_field` WHERE `type_name` != 'validate' AND `table_name` = '$table' ORDER BY `prio`");
 
@@ -77,7 +81,7 @@ class %s extends \rex_yform_manager_dataset {
 
 		    $fullCode = sprintf($classTemplate, $className, $generatedClasses);
 
-		    echo '<pre class="pre-scrollable">'.$fullCode.'</pre>';
+		    echo '<h2>'.$table.'</h2><pre class="pre-scrollable">'.$fullCode.'</pre>';
 
 		}
 

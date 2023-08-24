@@ -1,5 +1,5 @@
 package: ymca
-version: 0.0.1
+version: 0.0.2
 author: alex+ Digitales Marketing, Alexander Walther
 supportpage: https://github.com/alexplusde/ymca
 
@@ -9,6 +9,6 @@ page:
 pages:
     yform/yform_model_class:
         title: 'Model Class Generator'
-        icon: rex-icon fa-info-circle
+        icon: rex-icon fa-fast-forward
         itemclass: pull-right
         perm: project[]
