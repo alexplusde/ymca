@@ -8,7 +8,7 @@ page:
 
 pages:
     yform/yform_model_class:
-        title: 'Model Class Generator'
+        title: 'Model Class Accelerator'
         icon: rex-icon fa-fast-forward
         itemclass: pull-right
         perm: project[]
