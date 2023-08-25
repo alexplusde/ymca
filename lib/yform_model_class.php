@@ -16,13 +16,13 @@ class ymca
         $typeTemplates = [
             'value' => '
     /** @api */
-    public function get%s() : ?%s {
+    public function get%s() : %s {
         return $this->getValue("%s");
     }
             ',
             'datetime' => '
     /** @api */
-    public function get%s() : ?string {
+    public function get%s() : string {
         return $this->getValue("%s");
     }
             ',

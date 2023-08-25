@@ -15,10 +15,12 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 		$classTemplate = '
 # 1. In die boot.php muss folgender auskommentierte Code:
 /* 
-rex_yform_manager_dataset::setModelClass(
-    \'rex_%1$s\',
-    %1$s::class,
-);
+if (rex_addon::get(\'yform\')->isAvailable() && !rex::isSafeMode()) {
+	rex_yform_manager_dataset::setModelClass(
+		\'rex_%1$s\',
+		%1$s::class,
+	);
+}
 */
 
 # 2. Erstelle eine Datei lib/%1$s.php in deinem project- oder eigenen Addon mit folgendem Inhalt:
@@ -63,10 +65,10 @@ class %1$s extends \rex_yform_manager_dataset {
 
 		            // Default-Typ, falls kein passender db_type gefunden wird
 		            $typeMap = [
-		                'varchar(191)' => 'string',
-		                'text' => 'string',
-		                'tinyint(1)' => 'bool',
-		                'datetime' => '\DateTime',
+		                'varchar(191)' => '?string',
+		                'text' => '?string',
+		                'tinyint(1)' => '?bool',
+		                'datetime' => '?\DateTime',
 		                // ... weitere Typen hier hinzufügen
 		            ];
 		            $defaultType = 'mixed';
