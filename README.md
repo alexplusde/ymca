@@ -18,5 +18,3 @@ https://github.com/alexplusde
 [Alexander Walther](https://github.com/alexplusde)
 
 ## Credits
-
-stellenangebote basiert auf: [YForm](https://github.com/yakamara/redaxo_yform)  
