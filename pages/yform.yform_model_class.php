@@ -12,19 +12,15 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 		    $t[] = $table['table_name'];
 		}
 
-		$classTemplate = '
-# 1. In die boot.php muss folgender auskommentierte Code:
-/* 
+		$bootTemplate = '
 if (rex_addon::get(\'yform\')->isAvailable() && !rex::isSafeMode()) {
 	rex_yform_manager_dataset::setModelClass(
 		\'rex_%1$s\',
 		%1$s::class,
 	);
-}
-*/
-
-# 2. Erstelle eine Datei lib/%1$s.php in deinem project- oder eigenen Addon mit folgendem Inhalt:
-
+}'
+		;
+		$classTemplate = '
 class %1$s extends \rex_yform_manager_dataset {
 	%2$s
 }';
@@ -85,7 +81,8 @@ class %1$s extends \rex_yform_manager_dataset {
                 
 		    }
 
-		    $fullCode = sprintf($classTemplate, $className, $generatedClasses);
+		    $bootCode = sprintf($bootTemplate, $className);
+		    $classCode = sprintf($classTemplate, $className, $generatedClasses);
 		    ?>
 
 		<section class="rex-page-section">
@@ -98,8 +95,19 @@ class %1$s extends \rex_yform_manager_dataset {
 				</header>
 
 				<div class="panel-body">
+					<p># 1. In die <code>boot.php</code> muss folgender auskommentierte Code:</p>
 					<pre class="pre-scrollable">
-						<?= $fullCode ?>
+						<?= $bootCode ?>
+					</pre>
+
+					<p># 2. Erstelle eine Datei
+						<code>lib/<?= $className ?>.php</code> im
+						<code>project</code>-Addon oder
+						eigenen Addon mit folgendem Inhalt:
+					</p>
+
+					<pre class="pre-scrollable">
+						<?= $classCode ?>
 					</pre>
 				</div>
 			</div>
