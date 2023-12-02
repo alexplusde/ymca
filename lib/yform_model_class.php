@@ -13,8 +13,9 @@ class ymca
 
     public static function getTypeTemplate($type_name)
     {
-        $typeTemplates = [
-            'value' => '
+        $typeTemplates =
+[
+'value' => '
     /** @api */
     public function get%1$s() : %1$s {
         return $this->getValue("%3$s");
@@ -24,8 +25,8 @@ class ymca
         $this->setValue("%3$s", $value);
         return $this;
     }
-            ',
-            'checkbox' => '
+',
+'checkbox' => '
     /** @api */
     public function get%1$s(bool $asBool = false) : mixed {
         if($asBool) {
@@ -39,9 +40,9 @@ class ymca
         return $this;
     }
             ',
-            'textarea' => '
+'textarea' => '
     /** @api */
-    public function get%1$s(bool $asPlaintext = false) : %1$s {
+    public function get%1$s(bool $asPlaintext = false) : %2$s {
         if($asPlaintext) {
             return strip_tags($this->getValue("%3$s");
         }
@@ -53,9 +54,9 @@ class ymca
         return $this;
     }
             ',
-            'datetime' => '
+'datetime' => '
     /** @api */
-    public function get%1$s() : string {
+    public function get%1$s() : ?string {
         return $this->getValue("%3$s");
     }
     /** @api */
@@ -64,7 +65,7 @@ class ymca
         return $this;
     }
             ',
-            'be_media' => '
+'be_media' => '
     /** @api */
     public function get%1$s(bool $asMedia = false) : ?string {
         if($asMedia) {
@@ -81,83 +82,87 @@ class ymca
     }
             ',
 'datestamp' => '
-/** @api */
-public function get%1$s() : string {
-    return $this->getValue("%3$s");
-}
-/** @api */
-public function set%1$s(string $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : ?string {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(string $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'integer' => '
-/** @api */
-public function get%1$s() : integer {
-    return $this->getValue("%3$s");
-}
-/** @api */
-public function set%1$s(int $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : ?integer {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(int $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'number' => '
-/** @api */
-public function get%1$s() : float {
-    return $this->getValue("%3$s");
-}
-/** @api */
-public function set%1$s(float $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : ?float {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(float $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'prio' => '
-/** @api */
-public function get%1$s() : integer {
-    return $this->getValue("%3$s");
-}
-/** @api */
-public function set%1$s(int $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : ?int {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(int $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'time' => '
-/** @api */
-public function get%1$s() : string {
-    return $this->getValue("%3$s");
-}
-/** @api */
-public function set%1$s(string $value = "00:00") : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : string {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(string $value = "00:00") : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'domain' => '
-/** @api */
-public function get%1$s() : ?yrewrite_domain {
-    return yrewrite_domain::get($this->getValue("%3$s"));
-}
-/** @api */
-public function set%1$s(int $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
+    /** @api */
+    public function get%1$s() : ?yrewrite_domain {
+        return yrewrite_domain::get($this->getValue("%3$s"));
+    }
+    /** @api */
+    public function get%1$sId() : ?int {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(int $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+',
 'be_user' => '
-/** @api */
-public function get%1$s() : ?rex_user {
-    return rex_user::get($this->getValue("%3$s"));
-}
-/** @api */
-public function set%1$s(mixed $value) : self {
-    $this->setValue("%3$s", $value);
-    return $this;
-}
-        ',
-            'be_link' => '
+    /** @api */
+    public function get%1$s() : ?rex_user {
+        return rex_user::get($this->getValue("%3$s"));
+    }
+    /** @api */
+    public function set%1$s(mixed $value) : self {
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+',
+'be_link' => '
     /** @api */
     public function get%1$s(bool $asArticle = false) : ?rex_article {
         return rex_article::get($this->getValue("%3$s"));
@@ -177,31 +182,31 @@ public function set%1$s(mixed $value) : self {
         }
         return $this;
     }
-            ',
-            'relation' => '
+',
+'relation' => '
     /** @api */
     public function get%1$s() : ?rex_yform_manager_dataset {
         return $this->getRelatedDataset("%3$s");
     }
-            ',
-            'collection' => '
+',
+'collection' => '
     /** @api */
     public function get%1$s() : ?rex_yform_manager_collection {
         return $this->getRelatedCollection("%3$s");
     }
-            ',
-            'choice' => '
-            /** @api */
-            public function get%1$s() : ?mixed {
-                return $this->getValue("%3$s");
-            }
-            /** @api */
-            public function set%1$s(mixed $param) : ?mixed {
-                $this->setValue("%3$s", $param);
-                return $this;
-            }
-            ',
-        ];
+',
+'choice' => '
+    /** @api */
+    public function get%1$s() : ?mixed {
+        return $this->getValue("%3$s");
+    }
+    /** @api */
+    public function set%1$s(mixed $param) : ?mixed {
+        $this->setValue("%3$s", $param);
+        return $this;
+    }
+',
+];
 
         return $typeTemplates[$type_name] ?? '';
     }
