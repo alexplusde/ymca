@@ -48,36 +48,38 @@ class %1$s extends \rex_yform_manager_dataset {
 
 		            // Mapping der db_type zu PHP-Typen
 		            $methodMap = [
-		                'text' => 'value',
-		                'text' => 'textarea',
+		                'be_link' => 'be_link',
+		                'be_manager_relation' => 'relation',
+		                'be_manager_collection' => 'collection',
 		                'be_media' => 'be_media',
 		                'be_media_preview' => 'be_media',
-		                'checkbox' => 'checkbox',
-		                'be_link' => 'be_link',
 		                'be_user' => 'be_user',
-		                'domain' => 'domain',
+		                'checkbox' => 'checkbox',
 		                'choice_status' => 'choice',
 		                'datestamp' => 'datestamp',
+		                'datetime' => 'datetime',
+		                'domain' => 'domain',
 		                'integer' => 'integer',
 		                'number' => 'number',
 		                'prio' => 'integer',
+		                'text' => 'value',
+		                'textarea' => 'textarea',
 		                'time' => 'time',
-		                'datetime' => 'datetime',
-		                'be_manager_relation' => 'relation',
-		                'be_manager_collection' => 'collection',
-		                // ... weitere Typen hier hinzufügen
 		            ];
 		            $defaultMethod = 'value';
                     
 
 		            $methodTemplate = ymca::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
 
-		            // Default-Typ, falls kein passender db_type gefunden wird
+		            // Default-Typ, falls kein passender db_type gefunden wird oder mehrere zulässig sind.
 		            $typeMap = [
-		                'varchar(191)' => '?string',
-		                'text' => '?string',
+		                'bigint' => 'integer',
+		                'date' => '?string',
+		                'datetime' => '?\DateTime',
+		                'int' => 'integer',
 		                'tinyint(1)' => '?bool',
-		                'datetime' => '?\DateTime'
+		                'text' => '?string',
+		                'varchar(191)' => '?string',
 		            ];
 		            $defaultType = 'mixed';
 
