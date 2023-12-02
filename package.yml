@@ -1,5 +1,5 @@
 package: ymca
-version: 0.0.6
+version: 1.0.0
 author: alex+ Digitales Marketing, Alexander Walther
 supportpage: https://github.com/alexplusde/ymca
 
@@ -11,4 +11,4 @@ pages:
         title: 'Model Class Accelerator'
         icon: rex-icon fa-fast-forward
         itemclass: pull-right
-        perm: project[]
+        perm: admin
