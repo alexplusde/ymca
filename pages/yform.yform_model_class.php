@@ -48,24 +48,38 @@ class %1$s extends \rex_yform_manager_dataset {
 
 		            // Mapping der db_type zu PHP-Typen
 		            $methodMap = [
-		                'text' => 'value',
-		                'datetime' => 'datetime',
+		                'be_link' => 'be_link',
 		                'be_manager_relation' => 'relation',
 		                'be_manager_collection' => 'collection',
-		                // ... weitere Typen hier hinzufügen
+		                'be_media' => 'be_media',
+		                'be_media_preview' => 'be_media',
+		                'be_user' => 'be_user',
+		                'checkbox' => 'checkbox',
+		                'choice_status' => 'choice',
+		                'datestamp' => 'datestamp',
+		                'datetime' => 'datetime',
+		                'domain' => 'domain',
+		                'integer' => 'integer',
+		                'number' => 'number',
+		                'prio' => 'integer',
+		                'text' => 'value',
+		                'textarea' => 'textarea',
+		                'time' => 'time',
 		            ];
 		            $defaultMethod = 'value';
                     
 
 		            $methodTemplate = ymca::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
 
-		            // Default-Typ, falls kein passender db_type gefunden wird
+		            // Default-Typ, falls kein passender db_type gefunden wird oder mehrere zulässig sind.
 		            $typeMap = [
-		                'varchar(191)' => '?string',
-		                'text' => '?string',
-		                'tinyint(1)' => '?bool',
+		                'bigint' => 'integer',
+		                'date' => '?string',
 		                'datetime' => '?\DateTime',
-		                // ... weitere Typen hier hinzufügen
+		                'int' => 'integer',
+		                'tinyint(1)' => '?bool',
+		                'text' => '?string',
+		                'varchar(191)' => '?string',
 		            ];
 		            $defaultType = 'mixed';
 
