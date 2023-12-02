@@ -16,8 +16,9 @@ class ymca
         $typeTemplates =
 [
 'value' => '
+    /* %4$s */
     /** @api */
-    public function get%1$s() : %1$s {
+    public function get%1$s() : %2$s {
         return $this->getValue("%3$s");
     }
     /** @api */
@@ -27,6 +28,7 @@ class ymca
     }
 ',
 'checkbox' => '
+    /* %4$s */
     /** @api */
     public function get%1$s(bool $asBool = false) : mixed {
         if($asBool) {
@@ -41,6 +43,7 @@ class ymca
     }
             ',
 'textarea' => '
+    /* %4$s */
     /** @api */
     public function get%1$s(bool $asPlaintext = false) : %2$s {
         if($asPlaintext) {
@@ -55,6 +58,7 @@ class ymca
     }
             ',
 'datetime' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?string {
         return $this->getValue("%3$s");
@@ -66,6 +70,7 @@ class ymca
     }
             ',
 'be_media' => '
+    /* %4$s */
     /** @api */
     public function get%1$s(bool $asMedia = false) : ?string {
         if($asMedia) {
@@ -82,6 +87,7 @@ class ymca
     }
             ',
 'datestamp' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?string {
         return $this->getValue("%3$s");
@@ -91,8 +97,9 @@ class ymca
         $this->setValue("%3$s", $value);
         return $this;
     }
-            ',
+',
 'integer' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?integer {
         return $this->getValue("%3$s");
@@ -102,8 +109,9 @@ class ymca
         $this->setValue("%3$s", $value);
         return $this;
     }
-            ',
+',
 'number' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?float {
         return $this->getValue("%3$s");
@@ -115,6 +123,7 @@ class ymca
     }
             ',
 'prio' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?int {
         return $this->getValue("%3$s");
@@ -126,6 +135,7 @@ class ymca
     }
             ',
 'time' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : string {
         return $this->getValue("%3$s");
@@ -137,6 +147,7 @@ class ymca
     }
             ',
 'domain' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?yrewrite_domain {
         return yrewrite_domain::get($this->getValue("%3$s"));
@@ -152,6 +163,7 @@ class ymca
     }
 ',
 'be_user' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?rex_user {
         return rex_user::get($this->getValue("%3$s"));
@@ -163,6 +175,7 @@ class ymca
     }
 ',
 'be_link' => '
+    /* %4$s */
     /** @api */
     public function get%1$s(bool $asArticle = false) : ?rex_article {
         return rex_article::get($this->getValue("%3$s"));
@@ -184,6 +197,7 @@ class ymca
     }
 ',
 'relation' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?rex_yform_manager_dataset {
         return $this->getRelatedDataset("%3$s");
@@ -196,6 +210,7 @@ class ymca
     }
 ',
 'choice' => '
+    /* %4$s */
     /** @api */
     public function get%1$s() : ?mixed {
         return $this->getValue("%3$s");

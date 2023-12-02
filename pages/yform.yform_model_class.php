@@ -89,7 +89,9 @@ class %1$s extends \rex_yform_manager_dataset {
 		                $methodTemplate,
 		                $methodName,
 		                $returnType,
-		                $result['name']
+		                $result['name'],
+		                $result['label'],
+		                ""
 		            );
 		        }
                 
