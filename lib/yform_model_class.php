@@ -16,14 +16,89 @@ class ymca
         $typeTemplates = [
             'value' => '
     /** @api */
-    public function get%s() : %s {
-        return $this->getValue("%s");
+    public function get%1$s() : %1$s {
+        return $this->getValue("%1$s");
+    }
+    /** @api */
+    public function set%1$s(mixed $value) : self {
+        $this->setValue("%1$s", $value);
+        return $this;
+    }
+            ',
+            'checkbox' => '
+    /** @api */
+    public function get%1$s(bool $asBool = false) : mixed {
+        if($asBool) {
+            return (bool) $this->getValue("%1$s");
+        }
+        return $this->getValue("%1$s");
+    }
+    /** @api */
+    public function set%1$s(int $value = 1) : self {
+        $this->setValue("%1$s", $value);
+        return $this;
+    }
+            ',
+            'textarea' => '
+    /** @api */
+    public function get%1$s(bool $asStripped = false) : %1$s {
+        if($asStripped) {
+            return strip_tags($this->getValue("%1$s");
+        }
+        return $this->getValue("%1$s");
+    }
+    /** @api */
+    public function set%1$s(mixed $value) : self {
+        $this->setValue("%1$s", $value);
+        return $this;
     }
             ',
             'datetime' => '
     /** @api */
-    public function get%s() : string {
-        return $this->getValue("%s");
+    public function get%1$s() : string {
+        return $this->getValue("%1$s");
+    }
+    /** @api */
+    public function set%1$s(string $datetime) : self {
+        $this->setValue("%1$s", $datetime);
+        return $this;
+    }
+            ',
+            'be_media' => '
+    /** @api */
+    public function get%1$s(bool $asMedia = false) : string {
+        if($asMedia) {
+            return rex_media::get($this->getValue("%1$s"));
+        }
+        return $this->getValue("%1$s");
+    }
+    /** @api */
+    public function set%1$s(string $filename) : self {
+        if(rex_media::get($filename)) {
+            $this->setValue("%1$s", $filename);
+        }
+        return $this;
+    }
+            ',
+            'be_article' => '
+    /** @api */
+    public function get%1$s(bool $asArticle = false) : ?mixed {
+        if($asArticle) {
+            return rex_article::get($this->getValue("%1$s"));
+        }
+        return $this->getValue("%1$s");
+    }
+    public function get%1$sUrl() : ?string {
+        if($article = $this->get%1$s()) {
+            return $article->getUrl();
+        }
+    }
+    /** @api */
+    public function set%1$s(string $id) : self {
+        if(rex_article::get($id)) {
+            $this->setValue("%1$s", $id);
+        }
+        return $this;
     }
             ',
             'relation' => '
