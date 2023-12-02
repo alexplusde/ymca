@@ -17,11 +17,11 @@ class ymca
             'value' => '
     /** @api */
     public function get%1$s() : %1$s {
-        return $this->getValue("%1$s");
+        return $this->getValue("%3$s");
     }
     /** @api */
     public function set%1$s(mixed $value) : self {
-        $this->setValue("%1$s", $value);
+        $this->setValue("%3$s", $value);
         return $this;
     }
             ',
@@ -29,64 +29,141 @@ class ymca
     /** @api */
     public function get%1$s(bool $asBool = false) : mixed {
         if($asBool) {
-            return (bool) $this->getValue("%1$s");
+            return (bool) $this->getValue("%3$s");
         }
-        return $this->getValue("%1$s");
+        return $this->getValue("%3$s");
     }
     /** @api */
     public function set%1$s(int $value = 1) : self {
-        $this->setValue("%1$s", $value);
+        $this->setValue("%3$s", $value);
         return $this;
     }
             ',
             'textarea' => '
     /** @api */
-    public function get%1$s(bool $asStripped = false) : %1$s {
-        if($asStripped) {
-            return strip_tags($this->getValue("%1$s");
+    public function get%1$s(bool $asPlaintext = false) : %1$s {
+        if($asPlaintext) {
+            return strip_tags($this->getValue("%3$s");
         }
-        return $this->getValue("%1$s");
+        return $this->getValue("%3$s");
     }
     /** @api */
     public function set%1$s(mixed $value) : self {
-        $this->setValue("%1$s", $value);
+        $this->setValue("%3$s", $value);
         return $this;
     }
             ',
             'datetime' => '
     /** @api */
     public function get%1$s() : string {
-        return $this->getValue("%1$s");
+        return $this->getValue("%3$s");
     }
     /** @api */
     public function set%1$s(string $datetime) : self {
-        $this->setValue("%1$s", $datetime);
+        $this->getValue("%3$s", $datetime);
         return $this;
     }
             ',
             'be_media' => '
     /** @api */
-    public function get%1$s(bool $asMedia = false) : string {
+    public function get%1$s(bool $asMedia = false) : ?string {
         if($asMedia) {
-            return rex_media::get($this->getValue("%1$s"));
+            return rex_media::get($this->getValue("%3$s"));
         }
-        return $this->getValue("%1$s");
+        return $this->getValue("%3$s");
     }
     /** @api */
     public function set%1$s(string $filename) : self {
         if(rex_media::get($filename)) {
-            $this->setValue("%1$s", $filename);
+            $this->getValue("%3$s", $filename);
         }
         return $this;
     }
             ',
-            'be_article' => '
+'datestamp' => '
+/** @api */
+public function get%1$s() : string {
+    return $this->getValue("%3$s");
+}
+/** @api */
+public function set%1$s(string $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'integer' => '
+/** @api */
+public function get%1$s() : integer {
+    return $this->getValue("%3$s");
+}
+/** @api */
+public function set%1$s(int $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'number' => '
+/** @api */
+public function get%1$s() : float {
+    return $this->getValue("%3$s");
+}
+/** @api */
+public function set%1$s(float $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'prio' => '
+/** @api */
+public function get%1$s() : integer {
+    return $this->getValue("%3$s");
+}
+/** @api */
+public function set%1$s(int $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'time' => '
+/** @api */
+public function get%1$s() : string {
+    return $this->getValue("%3$s");
+}
+/** @api */
+public function set%1$s(string $value = "00:00") : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'domain' => '
+/** @api */
+public function get%1$s() : ?yrewrite_domain {
+    return yrewrite_domain::get($this->getValue("%3$s"));
+}
+/** @api */
+public function set%1$s(int $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+'be_user' => '
+/** @api */
+public function get%1$s() : ?rex_user {
+    return rex_user::get($this->getValue("%3$s"));
+}
+/** @api */
+public function set%1$s(mixed $value) : self {
+    $this->setValue("%3$s", $value);
+    return $this;
+}
+        ',
+            'be_link' => '
     /** @api */
-    public function get%1$s(bool $asArticle = false) : ?mixed {
-        if($asArticle) {
-            return rex_article::get($this->getValue("%1$s"));
-        }
-        return $this->getValue("%1$s");
+    public function get%1$s(bool $asArticle = false) : ?rex_article {
+        return rex_article::get($this->getValue("%3$s"));
+    }
+    public function get%1$sId() : ?int {
+        return $this->getValue("%3$s");
     }
     public function get%1$sUrl() : ?string {
         if($article = $this->get%1$s()) {
@@ -96,7 +173,7 @@ class ymca
     /** @api */
     public function set%1$s(string $id) : self {
         if(rex_article::get($id)) {
-            $this->setValue("%1$s", $id);
+            $this->getValue("%3$s", $id);
         }
         return $this;
     }
@@ -112,6 +189,17 @@ class ymca
     public function get%1$s() : ?rex_yform_manager_collection {
         return $this->getRelatedCollection("%3$s");
     }
+            ',
+            'choice' => '
+            /** @api */
+            public function get%1$s() : ?mixed {
+                return $this->getValue("%3$s");
+            }
+            /** @api */
+            public function set%1$s(mixed $param) : ?mixed {
+                $this->setValue("%3$s", $param);
+                return $this;
+            }
             ',
         ];
 

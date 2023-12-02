@@ -49,6 +49,19 @@ class %1$s extends \rex_yform_manager_dataset {
 		            // Mapping der db_type zu PHP-Typen
 		            $methodMap = [
 		                'text' => 'value',
+		                'text' => 'textarea',
+		                'be_media' => 'be_media',
+		                'be_media_preview' => 'be_media',
+		                'checkbox' => 'checkbox',
+		                'be_link' => 'be_link',
+		                'be_user' => 'be_user',
+		                'domain' => 'domain',
+		                'choice_status' => 'choice',
+		                'datestamp' => 'datestamp',
+		                'integer' => 'integer',
+		                'number' => 'number',
+		                'prio' => 'integer',
+		                'time' => 'time',
 		                'datetime' => 'datetime',
 		                'be_manager_relation' => 'relation',
 		                'be_manager_collection' => 'collection',
@@ -64,8 +77,7 @@ class %1$s extends \rex_yform_manager_dataset {
 		                'varchar(191)' => '?string',
 		                'text' => '?string',
 		                'tinyint(1)' => '?bool',
-		                'datetime' => '?\DateTime',
-		                // ... weitere Typen hier hinzufügen
+		                'datetime' => '?\DateTime'
 		            ];
 		            $defaultType = 'mixed';
 
