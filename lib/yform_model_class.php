@@ -47,7 +47,7 @@ class ymca
     /** @api */
     public function get%1$s(bool $asPlaintext = false) : %2$s {
         if($asPlaintext) {
-            return strip_tags($this->getValue("%3$s");
+            return strip_tags($this->getValue("%3$s"));
         }
         return $this->getValue("%3$s");
     }
