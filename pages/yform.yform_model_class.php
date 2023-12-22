@@ -85,6 +85,11 @@ class %1$s extends \rex_yform_manager_dataset {
 
 		            $returnType = $typeMap[$result['db_type']] ?? $defaultType;
 
+		            if (strpos($result['label'], 'translate:') === 0) {
+		                $translationKey = substr($result['label'], strlen('translate:'));
+		                $result['label'] = rex_i18n::msg($translationKey);
+		            }
+
 		            $generatedClasses .= sprintf(
 		                $methodTemplate,
 		                $methodName,
