@@ -72,7 +72,7 @@ class ymca
 'be_media' => '
     /* %4$s */
     /** @api */
-    public function get%1$s(bool $asMedia = false) : ?string {
+    public function get%1$s(bool $asMedia = false) : mixed {
         if($asMedia) {
             return rex_media::get($this->getValue("%3$s"));
         }
