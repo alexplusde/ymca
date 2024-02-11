@@ -59,7 +59,7 @@ class %1$s extends \rex_yform_manager_dataset {
 		                'datestamp' => 'datestamp',
 		                'datetime' => 'datetime',
 		                'domain' => 'domain',
-		                'integer' => 'integer',
+		                'integer' => 'int',
 		                'number' => 'number',
 		                'prio' => 'integer',
 		                'text' => 'value',
@@ -73,10 +73,10 @@ class %1$s extends \rex_yform_manager_dataset {
 
 		            // Default-Typ, falls kein passender db_type gefunden wird oder mehrere zulässig sind.
 		            $typeMap = [
-		                'bigint' => 'integer',
+		                'bigint' => 'int',
 		                'date' => '?string',
 		                'datetime' => '?\DateTime',
-		                'int' => 'integer',
+		                'int' => 'int',
 		                'tinyint(1)' => '?bool',
 		                'text' => '?string',
 		                'varchar(191)' => '?string',
