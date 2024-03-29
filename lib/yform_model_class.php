@@ -98,10 +98,10 @@ class ymca
         return $this;
     }
 ',
-'integer' => '
+'int' => '
     /* %4$s */
     /** @api */
-    public function get%1$s() : ?integer {
+    public function get%1$s() : ?int {
         return $this->getValue("%3$s");
     }
     /** @api */
