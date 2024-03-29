@@ -212,11 +212,11 @@ class ymca
 'choice' => '
     /* %4$s */
     /** @api */
-    public function get%1$s() : ?mixed {
+    public function get%1$s() : mixed {
         return $this->getValue("%3$s");
     }
     /** @api */
-    public function set%1$s(mixed $param) : ?mixed {
+    public function set%1$s(mixed $param) : mixed {
         $this->setValue("%3$s", $param);
         return $this;
     }
