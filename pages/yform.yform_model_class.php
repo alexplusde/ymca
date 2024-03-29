@@ -102,8 +102,8 @@ class %1$s extends \rex_yform_manager_dataset {
                 
 		    }
 
-		    $bootCode = sprintf($bootTemplate, $className);
-		    $classCode = sprintf($classTemplate, $className, $generatedClasses);
+		    $bootCode = "<?php " . sprintf($bootTemplate, $className) . "?>";
+		    $classCode = "<?php " .sprintf($classTemplate, $className, $generatedClasses) . "?>";
 		    ?>
 
 		<section class="rex-page-section">
@@ -116,20 +116,15 @@ class %1$s extends \rex_yform_manager_dataset {
 				</header>
 
 				<div class="panel-body">
-					<p># 1. In die <code>boot.php</code> muss folgender auskommentierte Code:</p>
-					<pre class="pre-scrollable">
-						<?= $bootCode ?>
-					</pre>
+					<p><strong>1. In die <code>boot.php</code> muss folgender auskommentierte Code:</strong></p>
+	<textarea class="form-control codemirror" rows="5" readonly data-codemirror-theme="eclipse" data-codemirror-mode="php"><?= $bootCode ?></textarea>
 
-					<p># 2. Erstelle eine Datei
+					<p><strong>2. Erstelle eine Datei
 						<code>lib/<?= $className ?>.php</code> im
 						<code>project</code>-Addon oder
 						eigenen Addon mit folgendem Inhalt:
-					</p>
-
-					<pre class="pre-scrollable">
-						<?= $classCode ?>
-					</pre>
+					</strong></p>
+					<textarea class="form-control codemirror" rows="5" readonly data-codemirror-theme="darcula" data-codemirror-mode="php"><?= $classCode ?></textarea>
 				</div>
 			</div>
 
