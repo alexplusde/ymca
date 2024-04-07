@@ -1,8 +1,38 @@
 # YOrm Model Class Accelerator (YMCA)
 
-Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen für dich.
+Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
 
-![image](https://github.com/alexplusde/ymca/assets/3855487/d3d88a42-01c1-4f6c-a440-8f7b7d9ecb91)
+## Nur 4 einfache Schritte
+
+* Gewünschte Tabelle anlegen
+* Felder definieren
+* YMCA aufrufen und Anweisungen folgen
+* Klasse an Projekt anpassen/erweitern \*
+
+Fertig!
+
+> \* **Hinweis:** Zusätzliche Anweisungen und Methoden sowie Korrekturen und Ergänzungen (z.B. Namespace) werden empfohlen.
+
+> **Tipp:** Perfektes Gegenstück zu <https://github.com/alexplusde/blaupause/>, der Addon-Vorlage mit Augenmerk auf YForm-basierte Addons.
+
+## Screenshot
+
+![blaupause test_redaxo_index php_page=yform_yform_model_class (2)](https://github.com/alexplusde/ymca/assets/3855487/36a6aad8-74b0-44c3-9256-b9ad381055bd)
+
+## Addons, die auf YMCA basieren
+
+Beispiele aus der Praxis:
+
+* https://github.com/FriendsOfREDAXO/neues
+* https://github.com/alexplusde/events
+* https://github.com/alexplusde/stellenangebote
+* https://github.com/alexplusde/staff
+* https://github.com/alexplusde/product
+* https://github.com/alexplusde/qanda
+* https://github.com/alexplusde/testimonial
+* https://github.com/alexplusde/milestone
+* https://github.com/alexplusde/school
+* https://github.com/alexplusde/wortpresse
 
 ## Lizenz
 
