@@ -4,11 +4,11 @@ Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen, um diese schnell u
 
 ## Nur 4 einfache Schritte
 
-* Gewünschte Tabelle anlegen
-* Felder definieren
-* YMCA aufrufen und Anweisungen folgen
-* Klasse an Projekt anpassen/erweitern \*
-
+1. Gewünschte Tabelle anlegen
+2. Felder definieren
+3. YMCA aufrufen und Anweisungen folgen
+4. Klasse an Projekt anpassen/erweitern\*
+5. 
 Fertig!
 
 > \* **Hinweis:** Zusätzliche Anweisungen und Methoden sowie Korrekturen und Ergänzungen (z.B. Namespace) werden empfohlen.
