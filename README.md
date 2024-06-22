@@ -2,6 +2,8 @@
 
 Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
 
+![image](https://github.com/alexplusde/ymca/assets/3855487/5581633b-56e5-4822-92bb-5d00d6cc1cb7)
+
 ## Nur 4 einfache Schritte
 
 1. Gewünschte Tabelle anlegen
