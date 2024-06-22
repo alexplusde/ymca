@@ -7,7 +7,7 @@ Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen, um diese schnell u
 1. Gewünschte Tabelle anlegen
 2. Felder definieren
 3. YMCA aufrufen und Anweisungen folgen
-4. Klasse an Projekt anpassen/erweitern\*
+4. Klasse oder API-Route an Projekt anpassen/erweitern\*
 
 Fertig!
 
