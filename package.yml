@@ -1,5 +1,5 @@
 package: ymca
-version: 1.0.5
+version: 2.0.0
 author: alex+ Digitales Marketing, Alexander Walther
 supportpage: https://github.com/alexplusde/ymca
 
@@ -7,6 +7,11 @@ page:
     hidden: true
 
 pages:
+    yform/yform_restful_api:
+        title: 'RESTful API Accelerator'
+        icon: rex-icon fa-fast-forward
+        itemclass: pull-right
+        perm: admin
     yform/yform_model_class:
         title: 'Model Class Accelerator'
         icon: rex-icon fa-fast-forward
