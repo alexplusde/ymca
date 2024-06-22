@@ -17,12 +17,13 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 		foreach ($t as $table) {
 
 			$table_name = $table;
+			$class_name = str_replace('rex_', '', $table);
 
 			$route = [];
-			$route['path'] = "/v1/$table/";
+			$route['path'] = "/$class_name/1.0.0";
 			$route['auth'] = '\rex_yform_rest_auth_token::checkToken';
-			$route['type'] = "$table::class";
-			$route['query'] = "$table::query()";
+			$route['type'] = "$class_name::class // TODO: Anführungszeichen entfernen!";
+			$route['query'] = "$class_name::query() // TODO: Anführungszeichen entfernen!";
 	
 		    $results = rex_sql::factory()->getArray("SELECT `id`, `table_name`, `prio`, `type_name`, `type_id`, `db_type`, `name`, `label` FROM `rex_yform_field` WHERE `type_name` != 'validate' AND `table_name` = '$table' ORDER BY `prio`");
 
@@ -58,7 +59,12 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 			@$route['post']['fields']["$table_name"] = $post;
 			$route['delete']['fields']["$table_name"] = ['id'];
 
-		    $routeCode = '$route = new \rex_yform_rest_route(' . var_export($route, true) . ');';
+		    $routeCode = '$route = new \rex_yform_rest_route(' . var_export($route, true) . ');
+			
+			
+// Einbinden der Konfiguration
+\rex_yform_rest::addRoute($route);
+';
 		    ?>
 
 		<section class="rex-page-section">
@@ -71,7 +77,9 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 				</header>
 
 				<div class="panel-body">
-					<p><strong>1. In die <code>boot.php</code> muss folgender Code:</strong></p>
+					<p><strong>1. In die <code>boot.php</code> muss folgender Code und an den Stellen für Klassenname und Query angepasst werden.:</strong></p>
+					<p>Tipp: im Nachgang mit Copilot oder eigenständig den Code mit "Array Shorthand Syntax" umformatieren lassen.</p>
+
 					<textarea class="form-control codemirror" rows="5" readonly data-codemirror-theme="darcula" data-codemirror-mode="php"><?= $routeCode ?></textarea>
 				</div>
 			</div>
