@@ -1,6 +1,6 @@
 # YOrm Model Class Accelerator (YMCA)
 
-Erstellt passende YOrm-Klassen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
+Erstellt passende YForm-Dataset-Klassen und API-Routen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
 
 ![image](https://github.com/alexplusde/ymca/assets/3855487/5581633b-56e5-4822-92bb-5d00d6cc1cb7)
 
@@ -25,16 +25,16 @@ Fertig!
 
 Beispiele aus der Praxis:
 
-* https://github.com/FriendsOfREDAXO/neues
-* https://github.com/alexplusde/events
-* https://github.com/alexplusde/stellenangebote
-* https://github.com/alexplusde/staff
-* https://github.com/alexplusde/product
-* https://github.com/alexplusde/qanda
-* https://github.com/alexplusde/testimonial
-* https://github.com/alexplusde/milestone
-* https://github.com/alexplusde/school
-* https://github.com/alexplusde/wortpresse
+* <https://github.com/FriendsOfREDAXO/neues>
+* <https://github.com/alexplusde/events>
+* <https://github.com/alexplusde/stellenangebote>
+* <https://github.com/alexplusde/staff>
+* <https://github.com/alexplusde/product>
+* <https://github.com/alexplusde/qanda>
+* <https://github.com/alexplusde/testimonial>
+* <https://github.com/alexplusde/milestone>
+* <https://github.com/alexplusde/school>
+* <https://github.com/alexplusde/wortpresse>
 
 ## Lizenz
 
@@ -43,8 +43,8 @@ MIT Lizenz, siehe [LICENSE](https://github.com/alexplusde/stellenangebote/blob/m
 ## Autoren
 
 **Alexander Walther**  
-http://www.alexplus.de  
-https://github.com/alexplusde  
+<http://www.alexplus.de>  
+<https://github.com/alexplusde>  
 
 **Projekt-Lead**  
 [Alexander Walther](https://github.com/alexplusde)
