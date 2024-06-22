@@ -86,6 +86,21 @@ class ymca
         return $this;
     }
             ',
+'be_table' => '
+    /* %4$s */
+    /** @api */
+    public function get%1$s() : ?array {
+        return json_decode($this->getValue("%3$s"), true);
+    }
+    /** @api */
+    public function set%1$s(array|string $value) : self {
+        if (is_array($value)) {
+            $value = json_encode($value, JSON_PRETTY_PRINT);
+        }
+        $this->setValue("%3$s", $value);
+        return $this;
+    }
+            ',
 'datestamp' => '
     /* %4$s */
     /** @api */
