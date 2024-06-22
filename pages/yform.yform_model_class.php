@@ -21,7 +21,19 @@ if (rex_addon::get(\'yform\')->isAvailable() && !rex::isSafeMode()) {
 }'
 		;
 		$classTemplate = '
-class %1$s extends \rex_yform_manager_dataset {
+
+/* Diesen namespace an das Projekt oder eigenes GitHub-Repository anpassen */
+namespace Project\Addon;
+
+/* Nicht benötigte Klassen entfernen */
+use rex_article;
+use rex_user;
+use rex_media;
+use yrewrite_domain;
+use rex_yform_manager_collection;
+use rex_yform_manager_dataset;
+
+class %1$s extends rex_yform_manager_dataset {
 	%2$s
 }';
 
@@ -53,6 +65,7 @@ class %1$s extends \rex_yform_manager_dataset {
 		                'be_manager_collection' => 'collection',
 		                'be_media' => 'be_media',
 		                'be_media_preview' => 'be_media',
+		                'be_table' => 'be_table',
 		                'be_user' => 'be_user',
 		                'checkbox' => 'checkbox',
 		                'choice_status' => 'choice',
