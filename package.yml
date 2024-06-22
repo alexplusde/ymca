@@ -7,6 +7,11 @@ page:
     hidden: true
 
 pages:
+    yform/yform_restful_api:
+        title: 'RESTful API Accelerator'
+        icon: rex-icon fa-fast-forward
+        itemclass: pull-right
+        perm: admin
     yform/yform_model_class:
         title: 'Model Class Accelerator'
         icon: rex-icon fa-fast-forward

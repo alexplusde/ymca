@@ -16,14 +16,14 @@ echo \rex_view::title(\rex_i18n::msg('yform'));
 if (rex_addon::get(\'yform\')->isAvailable() && !rex::isSafeMode()) {
 	rex_yform_manager_dataset::setModelClass(
 		\'rex_%1$s\',
-		%1$s::class,
+		%1$s::class, // Hier anpassen, falls Namespace verwendet wird
 	);
 }'
 		;
 		$classTemplate = '
 
-/* Diesen namespace an das Projekt oder eigenes GitHub-Repository anpassen */
-namespace Project\Addon;
+/* Falls gewünscht, namespace an das Projekt oder eigenes GitHub-Repository anpassen - und in der boot.php! */
+// namespace Project\Addon;
 
 /* Nicht benötigte Klassen entfernen */
 use rex_article;
