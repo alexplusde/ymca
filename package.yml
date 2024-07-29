@@ -7,23 +7,28 @@ page:
     hidden: true
 
 pages:
-    yform/yform_pdf:
-        title: 'PDF'
+    yform/ymca:
+        title: 'YMCA'
         icon: rex-icon fa-fast-forward
         itemclass: pull-right
         perm: admin
-    yform/yform_docs:
-        title: 'Docs'
+    yform/ymca/yorm:
+        title: 'YOrm'
         icon: rex-icon fa-fast-forward
-        itemclass: pull-right
         perm: admin
-    yform/yform_restful_api:
+    yform/ymca/restful_api:
         title: 'RESTful-API'
         icon: rex-icon fa-fast-forward
-        itemclass: pull-right
         perm: admin
-    yform/yform_model_class:
-        title: 'YOrm-Model-Class'
+    yform/ymca/docs:
+        title: 'Docs'
         icon: rex-icon fa-fast-forward
-        itemclass: pull-right
+        perm: admin
+    yform/ymca/dotlang:
+        title: '.lang'
+        icon: rex-icon fa-fast-forward
+        perm: admin
+    yform/ymca/pdf:
+        title: 'PDF'
+        icon: rex-icon fa-fast-forward
         perm: admin

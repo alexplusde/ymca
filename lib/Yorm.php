@@ -1,6 +1,8 @@
 <?php
 
-class ymca
+namespace Alexplusde\Ymca;
+
+class Yorm
 {
     public static function toCamelCase($input)
     {
