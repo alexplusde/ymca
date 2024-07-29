@@ -42,8 +42,8 @@ $entries = MeineKlasse::query()->find(); // YOrm-Standard-Methode zum Finden von
 		        }
                 
 		        if ($result['type_id'] === 'value') {
-		            $className = ymca_docs::toClassName($result['table_name']);
-		            $methodName = ymca_docs::toCamelCase($result['name']);
+		            $className = \Alexplusde\Ymca\Docs::toClassName($result['table_name']);
+		            $methodName = \Alexplusde\Ymca\Docs::toCamelCase($result['name']);
 
 		            // Mapping der db_type zu PHP-Typen
 		            $methodMap = [
@@ -69,7 +69,7 @@ $entries = MeineKlasse::query()->find(); // YOrm-Standard-Methode zum Finden von
 		            $defaultMethod = 'value';
                     
 
-		            $methodTemplate = ymca_docs::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
+		            $methodTemplate = \Alexplusde\Ymca\Docs::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
 
 					if (strpos($result['label'], 'translate:') === 0) {
 		                $translationKey = substr($result['label'], strlen('translate:'));
@@ -104,7 +104,7 @@ $entries = MeineKlasse::query()->find(); // YOrm-Standard-Methode zum Finden von
 				</header>
 
 				<div class="panel-body">
-					<p><strong>Erstelle in deinem Addon eine <code>/docs/##_<?= $table ?>.php</code> mit folgendem Inhalt:</strong></p>
+					<p><strong>Erstelle in deinem Addon eine <code>/docs/##_<?= $table ?>.md</code> mit folgendem Inhalt:</strong></p>
 					<textarea class="form-control codemirror" rows="5" readonly data-codemirror-theme="darcula" data-codemirror-mode="php"><?= $readmeCode ?></textarea>
 				</div>
 			</div>

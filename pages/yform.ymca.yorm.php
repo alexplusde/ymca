@@ -55,8 +55,8 @@ class %1$s extends rex_yform_manager_dataset {
 		        }
                 
 		        if ($result['type_id'] === 'value') {
-		            $className = ymca::toClassName($result['table_name']);
-		            $methodName = ymca::toCamelCase($result['name']);
+		            $className = \Alexplusde\Ymca\Yorm::toClassName($result['table_name']);
+		            $methodName = \Alexplusde\Ymca\Yorm::toCamelCase($result['name']);
 
 		            // Mapping der db_type zu PHP-Typen
 		            $methodMap = [
@@ -82,7 +82,7 @@ class %1$s extends rex_yform_manager_dataset {
 		            $defaultMethod = 'value';
                     
 
-		            $methodTemplate = ymca::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
+		            $methodTemplate = \Alexplusde\Ymca\Yorm::getTypeTemplate($methodMap[$result['type_name']] ?? $defaultMethod);
 
 		            // Default-Typ, falls kein passender db_type gefunden wird oder mehrere zulässig sind.
 		            $typeMap = [
