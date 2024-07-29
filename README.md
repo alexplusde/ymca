@@ -1,6 +1,6 @@
 # YOrm Model Class Accelerator (YMCA)
 
-Erstellt passende YForm-Dataset-Klassen und API-Routen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
+Erstellt passende YForm-Dataset-Klassen, API-Routen, Technische Dokumentation und PDF-Generator-Vorlagen anhand YForm-Felddefinitionen, um diese schnell und einfach in Projekten und Addons einzusetzen.
 
 ![image](https://github.com/alexplusde/ymca/assets/3855487/5581633b-56e5-4822-92bb-5d00d6cc1cb7)
 
