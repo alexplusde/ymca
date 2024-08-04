@@ -5,12 +5,13 @@ supportpage: https://github.com/alexplusde/ymca
 
 page:
     hidden: true
+    title: 'YMCA'
 
 pages:
     yform/ymca:
         title: 'YMCA'
         icon: rex-icon fa-fast-forward
-        itemclass: pull-right
+        itemClass: pull-right
         perm: admin
     yform/ymca/yorm:
         title: 'YOrm'
