@@ -83,7 +83,7 @@ class Yorm
     /** @api */
     public function set%1$s(string $filename) : self {
         if(rex_media::get($filename)) {
-            $this->getValue("%3$s", $filename);
+            $this->setValue("%3$s", $filename);
         }
         return $this;
     }
