@@ -67,7 +67,7 @@ class Yorm
     }
     /** @api */
     public function set%1$s(string $datetime) : self {
-        $this->getValue("%3$s", $datetime);
+        $this->setValue("%3$s", $datetime);
         return $this;
     }
             ',
@@ -194,7 +194,7 @@ class Yorm
 'be_link' => '
     /* %4$s */
     /** @api */
-    public function get%1$s(bool $asArticle = false) : ?rex_article {
+    public function get%1$s() : ?rex_article {
         return rex_article::get($this->getValue("%3$s"));
     }
     public function get%1$sId() : ?int {
