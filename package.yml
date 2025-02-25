@@ -1,5 +1,5 @@
 package: ymca
-version: 2.2.0
+version: 2.3.0
 author: alex+ Digitales Marketing, Alexander Walther
 supportpage: https://github.com/alexplusde/ymca
 
@@ -19,6 +19,10 @@ pages:
         perm: admin
     yform/ymca/restful_api:
         title: 'RESTful-API'
+        icon: rex-icon fa-fast-forward
+        perm: admin
+    yform/ymca/openapi_definition:
+        title: 'OpenAPI Definition'
         icon: rex-icon fa-fast-forward
         perm: admin
     yform/ymca/docs:
